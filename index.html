@@ -1,5 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XML and Code View</title>
+<style>
+  body {
+    background: #f8f9fa;
+    font-family: Consolas, "Courier New", monospace;
+    padding: 20px;
+  }
+  pre {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
 <pre>
+
 PART-A Programs
+--------------------------------------------------------------------------------------
 1. Create an application which generates a random color on each click.
 In acivity_main.xml
 remove textview
@@ -61,6 +86,7 @@ cl.setBackgroundColor(Color.rgb(gen.nextInt(256),gen.nextInt(256),gen.nextInt(25
 });
 }
 }
+--------------------------------------------------------------------------------------
 2. Design four checkboxes namely any four food items and one button. Find total
 amount of food items selected in Toast message after clicking the button.
 1.In activity_main.xml
@@ -164,8 +190,9 @@ Toast.makeText(getApplicationContext(),s.toString(),Toast.LENGTH_LONG).show();
 });
 }
 }
+  --------------------------------------------------------------------------------------
 3. Implement the options menu concept in the application to choose between two
-activities(Give appropriate titles to activities).
+activities .
 1.res->right click->Android resource directory->resoucese type->menu
 2. menu->right click->new->menu resouce file ->give name as options
 3. component tree->menu->drag and drop two Menu item
@@ -205,8 +232,6 @@ public class MainActivity2 extends AppCompatActivity {
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_main2);
-ActionBar actionBar = getSupportActionBar();
-actionBar.setTitle("First Activity");
 Button btn1 = findViewById(R.id.button1);
 btn1.setOnClickListener(new View.OnClickListener() {
 @Override
@@ -229,8 +254,6 @@ public class MainActivity3 extends AppCompatActivity {
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_main3);
-ActionBar actionBar = getSupportActionBar();
-actionBar.setTitle("Second Activity");
 Button btn2 = findViewById(R.id.button2);
 btn2.setOnClickListener(new View.OnClickListener() {
 @Override
@@ -278,8 +301,8 @@ if(item.getItemId()==R.id.f1)
 startActivity(new Intent(this,MainActivity2.class));
 return true;
 }
-else if(item.getItemId()==R.id.f2)
 {
+else if(item.getItemId()==R.id.f2)
 startActivity(new Intent(this,MainActivity3.class));
 return true;
 }
@@ -345,6 +368,8 @@ app:layout_constraintEnd_toEndOf="parent"
 app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+  --------------------------------------------------------------------------------------
 4. Implement context menu concept in application to change the background color.
 1. create menu and name it as m
 2. add three items and name them as Red,Blue,Green
@@ -434,6 +459,10 @@ cl.setBackgroundColor(Color.GREEN);
 return super.onContextItemSelected(item);
 }
 }
+
+  --------------------------------------------------------------------------------------
+
+  
 5. Design simple calculator application that performs basic arithmetic operations. Use
 ADD, SUB, MUL, DIV buttons to perform operations, CLEAR button to reset the fields,
 and edit text widgets for reading operands, displaying result value.
@@ -590,8 +619,8 @@ String editing1=f.getText().toString();
 String editing2=s.getText().toString();
 int n1=Integer.parseInt(editing1);
 int n2=Integer.parseInt(editing2);
-int diƯ=n1-n2;
-result.setText("DiƯerence is "+diƯ);
+int di =n1-n2;
+result.setText("Di erence is "+di );
 result.setTextColor(Color.parseColor("#4CAF50"));
 }
 });
@@ -638,6 +667,10 @@ cl.setBackgroundColor(Color.rgb(r.nextInt(256),r.nextInt(256),r.nextInt(256)));
 });
 }
 }
+
+  --------------------------------------------------------------------------------------
+
+  
 6. Write an application to make a dialogue box to confirm the change of background
 color.
 1. In the design,remove textview and add Button
@@ -704,6 +737,8 @@ b.show();
 });
 }
 }
+  --------------------------------------------------------------------------------------
+  
 7. Design a phone call application that takes a phone number from the user.
 add permission in AndroidManifest.xml
 <uses-permission android:name="android.permission.CALL_PHONE"/>
@@ -817,6 +852,11 @@ denied",Toast.LENGTH_SHORT).show();
 });
 }
 }
+
+  --------------------------------------------------------------------------------------
+
+
+  
 8.Design an application to send SMS using Intent class.
 1.Modify AndroidManifest.xml file
 add
@@ -954,8 +994,14 @@ Toast.LENGTH_SHORT).show();
 });
 }
 }
+
+
+
+  --------------------------------------------------------------------------------------
+
+  
 9. Design an application that captures the image using a camera and set the captured
-image asthe background for your application.
+image as the background for your application.
 activity_main.xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -1023,13 +1069,18 @@ if(requestCode==1 && resultCode==RESULT_OK)
 Bitmap image = (Bitmap) data.getExtras().get("data");
 //imageView.setImageBitmap(image);
 BitmapDrawable drawable= new BitmapDrawable(image);
+}
+}
 ConstraintLayout r=findViewById(R.id.cl);
 r.setBackground(drawable);
 }
 super.onActivityResult(requestCode, resultCode, data);
-}
-}
-PART-B Programs
+
+
+
+  ------------------------------------------------------------
+
+  PART-B Programs
 1. Implement web view concept in application which contains multiple activity and
 default HTML pages.
 WebView
@@ -1484,8 +1535,8 @@ if(level>60)
 {
 cl.setBackgroundColor(Color.GREEN );
 }
-else if(level>20)
 {
+else if(level>20)
 cl.setBackgroundColor(Color.BLUE );
 }
 else
@@ -1905,5 +1956,9 @@ imageView.startAnimation(animation);
 });
 }
 }
-  
+
+
+
   </pre>
+</body>
+</html>
